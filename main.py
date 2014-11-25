@@ -19,7 +19,7 @@ if __name__ == '__main__':
     while not os.path.exists(dirName) and count < 5:
         os.makedirs(dirName)
         count += 1
-    filePath = "{0}.jpg".format(os.path.join(dirName, time.strftime("%Y-%m-%d %H:%m:%S", time.localtime())))
+    filePath = "{0}.jpg".format(os.path.join(dirName, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
     args = ["raspistill", "-n", "-t", "1", "-h", "1024", "-w", "1024", "-o", filePath]
     pipe = subprocess.Popen(args, stderr=subprocess.PIPE)
     lines = pipe.stderr.readlines()
